@@ -20,8 +20,8 @@ function updateImage() {
     choiceTextElement2.innerHTML = choiceText2;
 
     // 이미지 변경
-    const imagePath1 = `../img/choice1/choice_${count}.png`;
-    const imagePath2 = `../img/choice2/choice_${count}.png`;
+    const imagePath1 = `../img/choice1/choice_${count + 1}.png`;
+    const imagePath2 = `../img/choice2/choice_${count + 1}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
 
@@ -76,6 +76,32 @@ function getChoiceText(count, choiceNumber) {
   return choiceTexts[count - 1][choiceNumber - 1];
 }
 
+// function downdateImage() {
+//   if (count > 1) {
+//     // 프로그래스 바 먼저 업데이트
+//     updateProgressBar();
+
+//     count--;
+//     const choiceImgElement1 = document.getElementById("choiceImg_01");
+//     const choiceImgElement2 = document.getElementById("choiceImg_02");
+//     const choiceTextElement1 = document.getElementById("choiceText_01");
+//     const choiceTextElement2 = document.getElementById("choiceText_02");
+
+//     // 각 선택지에 대한 텍스트를 각각 설정
+//     const choiceText1 = getChoiceText(count, 1);
+//     const choiceText2 = getChoiceText(count, 2);
+//     choiceTextElement1.innerHTML = choiceText1;
+//     choiceTextElement2.innerHTML = choiceText2;
+
+//     // 이미지 변경
+//     const imagePath1 = `../img/choice1/choice_${count}.png`;
+//     const imagePath2 = `../img/choice2/choice_${count}.png`;
+//     choiceImgElement1.src = imagePath1;
+//     choiceImgElement2.src = imagePath2;
+//   } else if (count === 1) {
+//     openPreviousModal();
+//   }
+// }
 function downdateImage() {
   if (count > 1) {
     // 프로그래스 바 먼저 업데이트
@@ -94,12 +120,15 @@ function downdateImage() {
     choiceTextElement2.innerHTML = choiceText2;
 
     // 이미지 변경
-    const imagePath1 = `../img/choice1/choice_${count}.png`;
-    const imagePath2 = `../img/choice2/choice_${count}.png`;
+    const imagePath1 = `../img/choice1/choice_${count + 1}.png`;
+    const imagePath2 = `../img/choice2/choice_${count + 1}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
-  } else if (count === 1) {
-    openPreviousModal();
+  }
+
+  // count가 1 이하일 때 이전 버튼 비활성화 처리
+  if (count <= 1) {
+    document.getElementById("previousButton").disabled = true;
   }
 }
 

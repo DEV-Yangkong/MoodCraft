@@ -134,8 +134,9 @@ body {
   left: 650px;
 }
 
-#prevButton {
+#previousButton {
   background: #ffaa40;
+  border: none;
   border-radius: 10px;
   font-weight: 600;
   line-height: 50px;
@@ -146,6 +147,7 @@ body {
 
 #mainButton {
   background: #5dc8cd;
+  border: none;
   border-radius: 10px;
   font-weight: 600;
   line-height: 50px;
