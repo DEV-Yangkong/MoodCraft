@@ -372,62 +372,41 @@ function goToNextPage(page) {
 }
 
 // 이미지 변경 함수
-let count = 0;
-
+let count = 1;
 function updateImage() {
-  if (count < 10) {
+  if (count <= 9) {
     const choiceImgElement1 = document.getElementById("choiceImg_01");
     const choiceImgElement2 = document.getElementById("choiceImg_02");
     const imagePath1 = `../img/choice1/choice_${count}.png`;
     const imagePath2 = `../img/choice2/choice_${count}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
-    updateProgressBar(); // 프로그래스 바를 먼저 업데이트하고
-    count++; // 이미지를 변경합니다.
+    count++;
+    updateProgressBar();
   } else {
     openResultModal();
   }
 }
 
 function downdateImage() {
-  if (count > 0) {
+  if (count > 1) {
     count--;
+    updateProgressBar();
     const choiceImgElement1 = document.getElementById("choiceImg_01");
     const choiceImgElement2 = document.getElementById("choiceImg_02");
-    const imagePath1 = `../img/choice1/choice_${count}.png`;
-    const imagePath2 = `../img/choice2/choice_${count}.png`;
+    const imagePath1 = `../img/choice1/choice_${count - 1}.png`;
+    const imagePath2 = `../img/choice2/choice_${count - 1}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
-    updateProgressBar();
-  } else if (count === 0) {
+  } else if (count === 1) {
     openPreviousModal();
   }
 }
 
 function updateProgressBar() {
   const progressBar = document.querySelector(".bar");
-  const percentage = ((count + 1) / 10) * 100;
-  progressBar.style.width = `${percentage}%`;
-
-  // 첫 화면일 때 1/10 표시
-  progressBar.textContent = `${count + 1}/10`;
-
-  // 10번째까지 칠해진 칸 표시
-  for (let i = 1; i <= 10; i++) {
-    const barClass = `bar_${i}`;
-    if (count >= i) {
-      progressBar.classList.add(barClass);
-    } else {
-      progressBar.classList.remove(barClass);
-    }
-  }
-
-  // 마지막 상태(100%)에 도달하면 추가 클래스를 적용합니다.
-  if (count === 10) {
-    progressBar.classList.add("bar_10_complete");
-  } else {
-    progressBar.classList.remove("bar_10_complete"); // 10번째가 아니면 추가 클래스를 제거합니다.
-  }
+  progressBar.style.width = `${(count / 10) * 100}%`;
+  progressBar.textContent = `${count}/10`;
 }
 
 // 이전 모달 열기
@@ -473,8 +452,5 @@ closeButton.onclick = function () {
   modal.style.display = "none";
 };
 
-// 페이지 로드 시 모달 창 열기
-window.addEventListener("load", function () {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "block";
-});
+// 프로그래스 바 초기화
+updateProgressBar();
