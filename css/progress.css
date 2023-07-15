@@ -1,4 +1,4 @@
-.progressContainer {
+/* .progressContainer {
   width: 50%;
   background-color: rgb(231, 231, 231);
   border-radius: 20px;
@@ -8,6 +8,25 @@
   -o-border-radius: 20px;
   margin: 0 auto;
   position: relative;
+} */
+
+/* CSS */
+.progressContainer {
+  width: 50%;
+  background-color: rgb(231, 231, 231);
+  border-radius: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bar {
+  width: 0%;
+  background-color: #143196;
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 400;
 }
 
 .bar_1 {
@@ -148,6 +167,11 @@
   text-align: center;
   margin-top: 15px;
   font-weight: 400;
+}
+
+/* 기존 클래스들은 그대로 유지하고, 마지막 상태에 대한 스타일만 추가합니다. */
+.bar_10_complete {
+  width: 100%;
 }
 
 .cheersImgContainer {
