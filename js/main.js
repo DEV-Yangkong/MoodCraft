@@ -25,6 +25,12 @@ function updateImage() {
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
 
+    // 질문 번호 및 질문 내용 업데이트
+    const questionNumberElement = document.getElementById("questionNumberSpan");
+    const questionElement = document.getElementById("questionSpan");
+    questionNumberElement.textContent = count + 1; // 질문 번호 업데이트
+    questionElement.textContent = getQuestionText(count + 1); // 질문 내용 업데이트
+
     count++;
     updateProgressBar();
   } else {
@@ -76,32 +82,24 @@ function getChoiceText(count, choiceNumber) {
   return choiceTexts[count - 1][choiceNumber - 1];
 }
 
-// function downdateImage() {
-//   if (count > 1) {
-//     // 프로그래스 바 먼저 업데이트
-//     updateProgressBar();
+// 추가된 함수 - 질문 텍스트 가져오기
+function getQuestionText(count) {
+  const questions = [
+    "밥 한 그릇으로 푸짐하게 식사를 할 때 어떤 음식을 선호해?",
+    "복날에 특별한 음식을 준비하려고 해. 어떤 음식을 선택할까?",
+    "아 배부르다~ 그렇지만 디저트 배는 따로있지! 후식으로 뭘 먹는게 좋을까?",
+    "가을 향기가 느껴질 때, 어떤 음료를 마시고 싶어?",
+    "오랜만의 술자리! 진탕 마셔보자",
+    "고급 레스토랑에서 식사를 하게 되었어. 누구와 함께 하고 싶어?",
+    "일을 쉬고 싶어서 연차를 썼다. 오늘 나의 계획은?",
+    "친구들과 함께 파티를 할 때, 어디서 열까?",
+    "음악을 들을 때, 어떤 스타일의 음악을 선호해?",
+    "정적인 운동과 활동적인 운동 중 어떤 운동을 더 좋아해?",
+  ];
 
-//     count--;
-//     const choiceImgElement1 = document.getElementById("choiceImg_01");
-//     const choiceImgElement2 = document.getElementById("choiceImg_02");
-//     const choiceTextElement1 = document.getElementById("choiceText_01");
-//     const choiceTextElement2 = document.getElementById("choiceText_02");
+  return questions[count - 1];
+}
 
-//     // 각 선택지에 대한 텍스트를 각각 설정
-//     const choiceText1 = getChoiceText(count, 1);
-//     const choiceText2 = getChoiceText(count, 2);
-//     choiceTextElement1.innerHTML = choiceText1;
-//     choiceTextElement2.innerHTML = choiceText2;
-
-//     // 이미지 변경
-//     const imagePath1 = `../img/choice1/choice_${count}.png`;
-//     const imagePath2 = `../img/choice2/choice_${count}.png`;
-//     choiceImgElement1.src = imagePath1;
-//     choiceImgElement2.src = imagePath2;
-//   } else if (count === 1) {
-//     openPreviousModal();
-//   }
-// }
 function downdateImage() {
   if (count > 1) {
     // 프로그래스 바 먼저 업데이트
@@ -124,8 +122,13 @@ function downdateImage() {
     const imagePath2 = `../img/choice2/choice_${count + 1}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
+
+    // 질문 번호 및 질문 내용 업데이트
+    const questionNumberElement = document.getElementById("questionNumberSpan");
+    const questionElement = document.getElementById("questionSpan");
+    questionNumberElement.textContent = count; // 질문 번호 업데이트
+    questionElement.textContent = getQuestionText(count); // 질문 내용 업데이트
   } else if (count === 1) {
-    // 페이지를 다시 로드하여 초기화
     openPreviousModal();
   }
 }
