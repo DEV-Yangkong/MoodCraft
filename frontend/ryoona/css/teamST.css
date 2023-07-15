@@ -54,3 +54,13 @@ body {
     background-color: lightblue;
     margin-top: 50px;
 }
+
+#mainButton {
+    background: #5dc8cd;
+    border-radius: 10px;
+    font-weight: 600;
+    line-height: 40px;
+    color: #fff;
+    transition: all 0.2s;
+    margin-left: 267px;
+  }
