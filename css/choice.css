@@ -156,94 +156,6 @@ body {
 }
 
 /* 이전 모달 스타일 */
-/* #previousModal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 결과보기 모달 스타일 */
-/* #resultModal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modalContent {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#resultButton {
-  margin-top: 10px;
-  background: #5dc8cd;
-  border-radius: 10px;
-  font-weight: 600;
-  line-height: 20px;
-  color: #fff;
-  transition: all 0.2s;
-}
-
-.formGroup {
-  margin-top: 10px;
-} */
-
-/* 이전 모달 스타일 */
 #previousModal {
   display: none; /* 초기에는 모달 숨김 */
   position: fixed;
@@ -313,4 +225,15 @@ body {
 
 .choiceText span {
   white-space: pre-wrap;
+}
+
+#goBackButton {
+  background: #ffaa40;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 50px;
+  color: #fff;
+  transition: all 0.2s;
+  margin-right: 50px;
 }

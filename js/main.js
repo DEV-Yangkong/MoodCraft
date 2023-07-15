@@ -124,11 +124,9 @@ function downdateImage() {
     const imagePath2 = `../img/choice2/choice_${count + 1}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
-  }
-
-  // count가 1 이하일 때 이전 버튼 비활성화 처리
-  if (count <= 1) {
-    document.getElementById("previousButton").disabled = true;
+  } else if (count === 1) {
+    // 페이지를 다시 로드하여 초기화
+    openPreviousModal();
   }
 }
 
@@ -147,6 +145,13 @@ function openPreviousModal() {
   const closeButton = document.querySelector("#previousModal .close");
   closeButton.onclick = function () {
     modal.style.display = "none";
+  };
+
+  // 처음으로 버튼 클릭 시 이벤트 처리
+  const goBackButton = document.getElementById("goBackButton");
+  goBackButton.onclick = function () {
+    // 모달을 닫은 후 이전 페이지로 돌아가기
+    location.reload();
   };
 }
 
