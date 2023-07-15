@@ -241,6 +241,20 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.formGroup {
+  margin: 10px auto;
+}
+
+#resultButton {
+  background: #58d726;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #fff;
+  transition: all 0.2s;
+}
+
 .modalContent {
   background-color: #fefefe;
   margin: 10% auto;
