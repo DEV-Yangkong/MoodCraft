@@ -11,57 +11,19 @@ body {
   justify-content: center;
 }
 
-/* .questionWrapper {
-  width: 100%;
-  margin: -20px auto;
-  position: relative;
-}
-
-#questionTheme {
-  width: 700px;
-  height: 150px;
-}
-
-#questionNumber {
-  position: absolute;
-  top: 17%;
-  left: 49.8%;
-  color: white;
-  font-size: 20px;
-}
-
-#questionNumber_10 {
-  position: absolute;
-  top: 17%;
-  left: 49.5%;
-  color: white;
-  font-size: 20px;
-}
-
-#question {
-  position: absolute;
-  top: 55%;
-  left: 32%;
-}
-
-#question span {
-  font-family: "Nanum Pen Script", cursive;
-  font-size: 26px;
-} */
-
 /* CSS */
 .questionWrapper {
   display: flex;
   align-items: center; /* 가로 중앙 정렬을 위해 추가 */
   justify-content: center; /* 가로 중앙 정렬을 위해 추가 */
   width: 100%;
-  margin: 20px auto; /* questionWrapper의 마진값 조정 */
+  margin: -10px auto; /* questionWrapper의 마진값 조정 */
   position: relative;
 }
 
 #questionTheme {
   width: 700px;
-  height: 150px;
+  height: 140px;
   margin: 0 20px; /* questionTheme의 좌우 마진값 조정 */
 }
 
