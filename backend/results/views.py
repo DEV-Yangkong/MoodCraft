@@ -24,7 +24,7 @@ class ResultDetail(APIView):
         def get(self, request, drink_kind, *args, **kwargs):     
             dosu = request.GET.get("dosu",None)
             sugar = request.GET.get("sugar",None)
-            print('도수 : ', dosu)
+
             drink_kind = Result.objects.get(drink_kind=drink_kind)
             detail_drink = drink_kind.results.filter(dosu = dosu, sugar = sugar)
             serializer = ResultDetailSerializer(detail_drink, many = True)
