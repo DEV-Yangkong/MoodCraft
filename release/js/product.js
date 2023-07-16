@@ -15,6 +15,10 @@ buttons.forEach(button => {
 });
 
 
+let URL = window.location.href.substr(51);
+
+console.log(URL);
+
 
 //카카오톡 API 연결, 나중에 주소 바꾸기
 const shareKakao = () => {
@@ -154,7 +158,8 @@ function result_confirm() {
     axios.get(
       'http://localhost:8000/api/v1/result/soju/detail/',
       {params:
-        {dosu: dosu,
+        {drink_kind: URL,
+          dosu: dosu,
         sugar: sugar
       }}
     )
