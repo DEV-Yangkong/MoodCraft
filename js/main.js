@@ -3,6 +3,30 @@ function goToNextPage(page) {
   window.location.href = page;
 }
 
+// 결과 이미지 정보 배열
+const resultTopImgArray = [
+  {
+    imagePath: "/img/beerMain.png",
+    drinkKind: "beer",
+  },
+  {
+    imagePath: "/img/wineMain.png",
+    drinkKind: "wine",
+  },
+  {
+    imagePath: "/img/sojuMain.png",
+    drinkKind: "soju",
+  },
+  {
+    imagePath: "/img/traditionalMain.png",
+    drinkKind: "traditional",
+  },
+  {
+    imagePath: "/img/rumMain.png",
+    drinkKind: "rum",
+  },
+];
+
 // 이미지 변경 함수
 let count = 1;
 function updateImage() {
@@ -158,28 +182,23 @@ function openPreviousModal() {
   };
 }
 
-const resultTopImgArray = [
-  {
-    imagePath: "/img/beerMain.png",
-    drinkKind: "beer",
-  },
-  {
-    imagePath: "/img/wineMain.png",
-    drinkKind: "wine",
-  },
-  {
-    imagePath: "/img/sojuMain.png",
-    drinkKind: "soju",
-  },
-  {
-    imagePath: "/img/traditionalMain.png",
-    drinkKind: "traditional",
-  },
-  {
-    imagePath: "/img/rumMain.png",
-    drinkKind: "rum",
-  },
-];
+// 결과에 따라 이미지를 설정하는 함수
+function setTopImage(result) {
+  const resultTopImg = document.getElementById("resultTopImg");
+  const matchedResult = resultTopImgArray.find(
+    (item) => item.drinkKind === result
+  );
+  if (matchedResult) {
+    resultTopImg.src = matchedResult.imagePath;
+  }
+}
+
+// 페이지가 로드될 때 결과를 가져와서 이미지 설정
+window.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const drinkKind = urlParams.get("drink_kind");
+  setTopImage(drinkKind);
+});
 
 // 결과보기 모달 열기
 function openResultModal() {
@@ -210,6 +229,9 @@ function openResultModal() {
   };
 }
 
+// 프로그래스 바 초기화
+updateProgressBar();
+
 // 페이지가 로드될 때 결과보기 모달의 이미지를 랜덤으로 설정합니다.
 window.addEventListener("DOMContentLoaded", function () {
   const resultTopImg = document.getElementById("resultTopImg");
@@ -224,9 +246,6 @@ closeButton.onclick = function () {
   const modal = this.closest(".modal");
   modal.style.display = "none";
 };
-
-// 프로그래스 바 초기화
-updateProgressBar();
 
 // // // 상단 정상 작동 ☝🏻-------------------------------------------------
 // // // 상단 정상 작동 ☝🏻-------------------------------------------------
