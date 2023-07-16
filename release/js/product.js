@@ -158,7 +158,8 @@ function result_confirm() {
         sugar: sugar
       }}
     )
-    
+
+    location.href='http://127.0.0.1:5500/release/resultProduct.html';
   } else {
     alert("다음 질문도 선택해주세요~!")
   }
