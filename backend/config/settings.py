@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 CUSTOM_APPS = [
     "results.apps.ResultsConfig",
     "visiters.apps.VisitersConfig",
-    "rest_framework"
+    "rest_framework",
+    "corsheaders",
     ]
 
 DEFAULT_APPS = [
@@ -48,6 +49,7 @@ DEFAULT_APPS = [
 INSTALLED_APPS = CUSTOM_APPS + DEFAULT_APPS
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,3 +131,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+import os
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
+CORS_ORIGIN_WHITELIST = ['http://localhost:5500']
+CORS_ALLOW_CREDENTIALS = True
