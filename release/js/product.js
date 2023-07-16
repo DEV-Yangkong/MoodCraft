@@ -163,7 +163,7 @@ function result_confirm() {
         sugar: sugar
       }}
     )
-
+console.log('url : ',URL);
     location.href='http://127.0.0.1:5500/release/resultProduct.html';
   } else {
     alert("다음 질문도 선택해주세요~!")
@@ -172,6 +172,7 @@ function result_confirm() {
   // 소주 있는 값이 원래 드링크_카인드(예은언니가 보내줘야되는값)라 나중에 수정 해야함   
 }
 
+//url 복사하기
 function sharePage () {
   const shareObject = {
     title: '오늘의 술! - MoodCraft',
