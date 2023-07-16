@@ -12,7 +12,7 @@ class ResultInfo(APIView):
 
     def get(self, request):
         drink_kind = request.GET.get("drink_kind", None)
-        result = Result.objects.get(drink_kind = drink_kind)
+        result = Result.objects.get(drink_kind=drink_kind)
         result.drink_count += 1
         result.save()
         serializer = ResultSerializer(result)
@@ -21,7 +21,8 @@ class ResultInfo(APIView):
 
 
 class ResultDetail(APIView):
-        def get(self, request, drink_kind, *args, **kwargs):     
+        def get(self, request, *args, **kwargs):     
+            drink_kind = request.GET.get("drink_kind",None)
             dosu = request.GET.get("dosu",None)
             sugar = request.GET.get("sugar",None)
             print('도수 : ', dosu)

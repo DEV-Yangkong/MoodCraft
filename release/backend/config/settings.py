@@ -135,4 +135,4 @@ import os
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
 CORS_ORIGIN_WHITELIST = ['http://localhost:5500']
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = True 

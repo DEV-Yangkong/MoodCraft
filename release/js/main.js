@@ -205,28 +205,61 @@ function openResultModal() {
   const modal = document.getElementById("resultModal");
   modal.style.display = "block";
 
-  // 결과보기 버튼 클릭 시 이벤트 핸들러 등록
+  // 결과보기 버튼 클릭 시 이벤트 핸들러
   const resultButton = document.getElementById("resultButton");
   resultButton.addEventListener("click", function () {
+    // 라디오 버튼 체크 여부 확인
+    const genderInput = document.querySelector('input[name="gender"]:checked');
+    if (!genderInput) {
+      // 라디오 버튼이 선택되지 않은 경우 처리 (예: 오류 메시지 표시 또는 다른 기본값 설정)
+      alert("성별을 선택해주세요.");
+      return;
+    }
+
     // 배열에서 랜덤하게 음료 종류 선택
     const randomIndex = Math.floor(Math.random() * resultTopImgArray.length);
     const drinkKind = resultTopImgArray[randomIndex].drinkKind;
 
-    // 결과 페이지로 이동할 URL 생성
-    const resultPage = `./resultKind.html?drink_kind=${drinkKind}`;
+    // gender와 age 정보 가져오기
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const age = document.querySelector('input[name="age"]:checked').value; // 여기서 수정
+
+    // 결과 페이지로 이동할 URL 생성 (URL 파라미터 추가)
+    const recommendationPage = `./resultKind.html?drink_kind=${drinkKind}&gender=${gender}&age=${age}`;
 
     // 결과 페이지로 이동
-    goToNextPage(resultPage);
+    // window.location.href = recommendationPage;
 
-    // AJAX 요청으로 백엔드에 데이터 전송
-    sendResultData(drinkKind);
+    // 정보를 백엔드로 POST 요청 보내기
+    const data = {
+      drink_kind: drinkKind,
+      gender: gender,
+      age: age,
+    };
+
+    console.log(data);
+
+    // POST 요청을 보낼 URL 설정 (백엔드의 URL을 입력하세요)
+    const url = "http://127.0.0.1:8000/api/v1/visiters"; // 백엔드 URL을 여기에 입력하세요.
+
+    // AJAX를 사용하여 POST 요청 보내기
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          // 요청이 성공적으로 완료되었을 때 처리할 코드 작성
+          console.log("POST request successful!");
+          console.log(xhr.responseText); // 백엔드에서 보낸 응답 확인
+        } else {
+          // 요청이 실패했을 때 처리할 코드 작성
+          console.error("POST request failed.");
+        }
+      }
+    };
+    xhr.send(JSON.stringify(data));
   });
-
-  // 닫기 버튼 클릭 시 모달 창 닫기
-  const closeButton = document.querySelector("#resultModal .close");
-  closeButton.onclick = function () {
-    modal.style.display = "none";
-  };
 }
 
 // 프로그래스 바 초기화
@@ -247,8 +280,6 @@ closeButton.onclick = function () {
   modal.style.display = "none";
 };
 
-// // // 상단 정상 작동 ☝🏻-------------------------------------------------
-// // // 상단 정상 작동 ☝🏻-------------------------------------------------
 // main.js 파일
 
 // 상품추천 버튼 클릭 시 이벤트 핸들러 등록
@@ -271,3 +302,6 @@ function goToTestPage() {
   const url = `./test.html?drink_kind=${drinkKind}`;
   goToNextPage(url);
 }
+
+// // // 상단 정상 작동 ☝🏻-------------------------------------------------
+// // // 상단 정상 작동 ☝🏻-------------------------------------------------
