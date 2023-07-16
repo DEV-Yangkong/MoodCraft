@@ -1,63 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/frontend/ryoona/css/testST.css">
-   
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./testST.css" />
+
     <title>오늘의 술! - MoodCraft</title>
-    
-</head>
-<body>
-    <div id="banner"><img style="width: 576px" src="/img/topBanner1.png"></div>
+  </head>
+  <body>
+    <div id="banner">
+      <img style="width: 576px" src="./img/topBanner1.png" />
+    </div>
     <div class="title">
-        <h2 style="font-size: 20px; font-weight: 800;">어떤 술 상품을 추천 해줄까?</h2>
+      <h2 style="font-size: 20px; font-weight: 800">
+        어떤 술 상품을 추천 해줄까?
+      </h2>
     </div>
     <div class="content">
-        <div class="con1">
-            <div class="text">1. 너 술찌야?</div>
-            <div class="btnB">
-                <button class="btn" onclick="clickEffect(event)">나 술찌</button>
-                <button class="btn" onclick="clickEffect(event)">난 술 고수</button>
-            </div>
+      <div class="con1">
+        <div class="text">1. 너 술찌야?</div>
+        <div class="btnB">
+          <button class="btn Q1" onclick="clickEffect(event)">나 술찌</button>
+          <button class="btn Q1" onclick="clickEffect(event)">
+            난 술 고수
+          </button>
         </div>
-       
-        <div class="con">
-            <div class="text">2. 단거 좋아해?</div>
-            <div class="btnB">
-                <button class="btn" onclick="clickEffect(event)">단거 사절</button>
-                <button class="btn" onclick="clickEffect(event)">이빨 썩을 정도</button>
-            </div>
-        </div>
-       
-        <div class="con">
-            <div class="text">3. 어디서 마실래?</div>
-            <div class="btnB">
-                <button class="btn">집</button>
-                <button class="btn">포장마차</button>
-            </div>    
-        </div>
+      </div>
 
-        <div class="con">
-            <div class="text">4. 어떤 안주랑 먹을까?</div>
-            <div class="btnB">
-                <button class="btn">마른 안주</button>
-                <button class="btn">탕류</button>
-                <button class="btn">피자&치킨</button>
-            </div>
+      <div class="con">
+        <div class="text">2. 단거 좋아해?</div>
+        <div class="btnB">
+          <button class="btn Q2" onclick="clickEffect(event)">단거 사절</button>
+          <button class="btn Q2" onclick="clickEffect(event)">
+            이빨 썩을 정도
+          </button>
         </div>
- 
+      </div>
+
+      <div class="con">
+        <div class="text">3. 어디서 마실래?</div>
+        <div class="btnB">
+          <button class="btn Q3" onclick="clickQuestion1()">집</button>
+          <button class="btn Q3" onclick="clickQuestion1()">포장마차</button>
+        </div>
+      </div>
+
+      <div class="con">
+        <div class="text">4. 어떤 안주랑 먹을까?</div>
+        <div class="btnB">
+          <button class="btn Q4" onclick="clickQuestion2()">마른 안주</button>
+          <button class="btn Q4" onclick="clickQuestion2()">탕류</button>
+          <button class="btn Q4" onclick="clickQuestion2()">피자&치킨</button>
+        </div>
+      </div>
     </div>
 
     <div>
-        <button id="button" onclick="window.location.reload()">다시선택하기</button>
-        <button id="button" onclick="result_confirm()">결과 확인하기</button>
+      <button id="button" onclick="window.location.reload()">
+        다시선택하기
+      </button>
+      <button id="button" onclick="result_confirm()">결과 확인하기</button>
     </div>
-    
+
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
-    <script src="/frontend/ryoona/js/main.js"></script>
-</body>
+    <script src="./js/product.js"></script>
+  </body>
 </html>
 
 <!--"corsheaders", 디폴트앱 맞아?-->
