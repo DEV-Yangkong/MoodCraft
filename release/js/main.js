@@ -249,13 +249,25 @@ closeButton.onclick = function () {
 
 // // // 상단 정상 작동 ☝🏻-------------------------------------------------
 // // // 상단 정상 작동 ☝🏻-------------------------------------------------
-// 상품추천 버튼 클릭 시 이벤트 핸들러 등록
-function goToTestPage() {
-  // 여기서 drinkKind를 가져오는 로직을 구현해야 합니다.
-  // 예시로 wine을 가져온다고 가정합니다.
-  const drinkKind = "wine";
-  const testPageUrl = `https://moodcraft.shop/${drinkKind}/test.html`;
+// main.js 파일
 
-  // test.html 페이지로 이동하고 주소도 변경
-  window.location.href = testPageUrl;
+// 상품추천 버튼 클릭 시 이벤트 핸들러 등록
+const productButton = document.getElementById("productButton");
+productButton.onclick = function () {
+  // 배열에서 랜덤하게 음료 종류 선택
+  const randomIndex = Math.floor(Math.random() * resultTopImgArray.length);
+  const drinkKind = resultTopImgArray[randomIndex].drinkKind;
+
+  // 상품추천 페이지로 이동할 URL 생성 (URL 파라미터 추가)
+  const recommendationPage = `./test.html?drink_kind=${drinkKind}`;
+
+  // 상품추천 페이지로 이동
+  window.location.href = recommendationPage;
+};
+
+function goToTestPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const drinkKind = urlParams.get("drink_kind");
+  const url = `./test.html?drink_kind=${drinkKind}`;
+  goToNextPage(url);
 }
