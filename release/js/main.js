@@ -6,23 +6,23 @@ function goToNextPage(page) {
 // 결과 이미지 정보 배열
 const resultTopImgArray = [
   {
-    imagePath: "/release/img/beerMain.png",
+    imagePath: "./img/beerMain.png",
     drinkKind: "beer",
   },
   {
-    imagePath: "/release/img/wineMain.png",
+    imagePath: "./img/wineMain.png",
     drinkKind: "wine",
   },
   {
-    imagePath: "/release/img/sojuMain.png",
+    imagePath: "./img/sojuMain.png",
     drinkKind: "soju",
   },
   {
-    imagePath: "/release/img/traditionalMain.png",
+    imagePath: "./img/traditionalMain.png",
     drinkKind: "traditional",
   },
   {
-    imagePath: "/release/img/rumMain.png",
+    imagePath: "./img/rumMain.png",
     drinkKind: "rum",
   },
 ];
@@ -44,8 +44,8 @@ function updateImage() {
     choiceTextElement2.innerHTML = choiceText2;
 
     // 이미지 변경
-    const imagePath1 = `/release/img/choice1/choice_${count + 1}.png`;
-    const imagePath2 = `/release/img/choice2/choice_${count + 1}.png`;
+    const imagePath1 = `./img/choice1/choice_${count + 1}.png`;
+    const imagePath2 = `./img/choice2/choice_${count + 1}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
 
@@ -142,8 +142,8 @@ function downdateImage() {
     choiceTextElement2.innerHTML = choiceText2;
 
     // 이미지 변경
-    const imagePath1 = `/release/img/choice1/choice_${count + 1}.png`;
-    const imagePath2 = `/release/img/choice2/choice_${count + 1}.png`;
+    const imagePath1 = `./img/choice1/choice_${count + 1}.png`;
+    const imagePath2 = `./img/choice2/choice_${count + 1}.png`;
     choiceImgElement1.src = imagePath1;
     choiceImgElement2.src = imagePath2;
 
