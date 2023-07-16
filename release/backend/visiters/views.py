@@ -13,8 +13,9 @@ class AllVisiters(APIView):
 
     def get(self, request):
         visiter = Visiter.objects.all()
+        count = visiter.count()
         serializer = VisiterSerializer(visiter, many = True)
-        return Response(serializer.data)
+        return Response(serializer.data, {"count": count})
   
     def post(self, request):
         serializer = VisiterSerializer(data = request.data)

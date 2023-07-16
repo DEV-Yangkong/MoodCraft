@@ -228,7 +228,7 @@ function openResultModal() {
     const recommendationPage = `./resultKind.html?drink_kind=${drinkKind}&gender=${gender}&age=${age}`;
 
     // 결과 페이지로 이동
-    // window.location.href = recommendationPage;
+    window.location.href = recommendationPage;
 
     // 정보를 백엔드로 POST 요청 보내기
     const data = {
@@ -240,7 +240,7 @@ function openResultModal() {
     console.log(data);
 
     // POST 요청을 보낼 URL 설정 (백엔드의 URL을 입력하세요)
-    const url = "http://127.0.0.1:8000/api/v1/visiters"; // 백엔드 URL을 여기에 입력하세요.
+    const url = "http://127.0.0.1:8000/api/v1/visiters/"; // 백엔드 URL을 여기에 입력하세요.
 
     // AJAX를 사용하여 POST 요청 보내기
     const xhr = new XMLHttpRequest();
