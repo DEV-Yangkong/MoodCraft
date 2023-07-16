@@ -113,10 +113,20 @@ function result_confirm() {
       sugar: sugar
     }}
   )
+
+    if( back_list[0] === '나 술찌') {
+      back_list[0] = 'low'
+    }
+    else{
+      back_list[1]= 'high'
+    }
+    console.log(back_list[0]);
+
   // 소주 있는 값이 원래 드링크_카인드(예은언니가 보내줘야되는값)라 나중에 수정 해야함   
 }
 
-// function reset 다시 선택하기 클릭 이벤트 조건 만들기
+
+
 
 
 
@@ -130,11 +140,13 @@ function result_confirm() {
 // } else if(code ==='bd' || code ==='db') {
 //     localStorage.setItem("result", drink_list['bd']) 
 // }
-
-
-
-
 // 테스트 페이지에서 로컬 스토리지에 담고 결과 페이지에서 사용하는 방식으로 진행해볼 예정입니다~!
+
+
+// function Select () {
+//   if()
+// }
+
 
 
 
