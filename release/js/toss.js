@@ -15,7 +15,7 @@ console.log(sugar);
 
 
 axios.get(
-    'http://localhost:8000/api/v1/result/soju/detail/',
+    'http://localhost:8000/api/v1/result/detail/',
     {params:
       {drink_kind: drink_kind,
         dosu: dosu,
