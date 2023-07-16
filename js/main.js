@@ -158,6 +158,14 @@ function openPreviousModal() {
   };
 }
 
+const resultTopImgArray = [
+  "/img/beerMain.png",
+  "/img/wineMain.png",
+  "/img/sojuMain.png",
+  "/img/traditionalMain.png",
+  "/img/rumMain.png",
+];
+
 // 결과보기 모달 열기
 function openResultModal() {
   const modal = document.getElementById("resultModal");
@@ -180,7 +188,23 @@ function openResultModal() {
   closeButton.onclick = function () {
     modal.style.display = "none";
   };
+
+  // 배열에서 랜덤하게 이미지를 선택합니다.
+  const randomIndex = Math.floor(Math.random() * resultTopImgArray.length);
+  const randomImage = resultTopImgArray[randomIndex];
+
+  // 랜덤하게 선택된 이미지를 resultTopImg의 소스로 설정합니다.
+  const resultTopImg = document.getElementById("resultTopImg");
+  resultTopImg.src = randomImage;
 }
+
+// 페이지가 로드될 때 결과보기 모달의 이미지를 랜덤으로 설정합니다.
+window.addEventListener("DOMContentLoaded", function () {
+  const resultTopImg = document.getElementById("resultTopImg");
+  const randomIndex = Math.floor(Math.random() * resultTopImgArray.length);
+  const randomImage = resultTopImgArray[randomIndex];
+  resultTopImg.src = randomImage;
+});
 
 // 모달 창 닫기 버튼 클릭 시 이벤트 핸들러
 const closeButton = document.querySelector(".modal .close");
