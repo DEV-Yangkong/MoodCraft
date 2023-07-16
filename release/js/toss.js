@@ -1,4 +1,4 @@
-
+import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 let URL = window.location.search;
 console.log(URL);
@@ -14,14 +14,47 @@ console.log(dosu);
 console.log(sugar);
 
 
-axios.get(
-    'http://localhost:8000/api/v1/result/detail/',
-    {params:
-      {drink_kind: drink_kind,
+
+function Result() {
+  axios.get('http://localhost:8000/api/v1/result/detail/',
+  {params:
+    {
+        drink_kind: drink_kind,
         dosu: dosu,
-      sugar: sugar
-    }}
-  )
+        sugar: sugar
+    }
+
+  })
+  .then(response => {
+    let drink_name = document.createElement('div')
+    drink_name.textContent = response.data[0].drink_name
+    const result1 = document.getElementById("result1");
+    result1.appendChild(drink_name);
+
+    let image = document.createElement('img')
+    image.src = response.data[0].image
+    const result2 = document.getElementById("result2");
+    result2.appendChild(image);
+
+    let description = document.createElement('div')
+    description.textContent = response.data[0].description
+    const result3 = document.getElementById("result3");
+    result3.appendChild(description);
+
+    
+  })
+}
+Result();
+
+
+// axios.get(
+//     'http://localhost:8000/api/v1/result/detail/',
+//     {params:
+//       {drink_kind: drink_kind,
+//         dosu: dosu,
+//       sugar: sugar
+//     }}
+//   )
 
 
 
