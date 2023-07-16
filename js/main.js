@@ -159,11 +159,26 @@ function openPreviousModal() {
 }
 
 const resultTopImgArray = [
-  "/img/beerMain.png",
-  "/img/wineMain.png",
-  "/img/sojuMain.png",
-  "/img/traditionalMain.png",
-  "/img/rumMain.png",
+  {
+    imagePath: "/img/beerMain.png",
+    drinkKind: "beer",
+  },
+  {
+    imagePath: "/img/wineMain.png",
+    drinkKind: "wine",
+  },
+  {
+    imagePath: "/img/sojuMain.png",
+    drinkKind: "soju",
+  },
+  {
+    imagePath: "/img/traditionalMain.png",
+    drinkKind: "traditional",
+  },
+  {
+    imagePath: "/img/rumMain.png",
+    drinkKind: "rum",
+  },
 ];
 
 // 결과보기 모달 열기
@@ -174,13 +189,18 @@ function openResultModal() {
   // 결과보기 버튼 클릭 시 이벤트 핸들러 등록
   const resultButton = document.getElementById("resultButton");
   resultButton.addEventListener("click", function () {
-    // 사용자의 성별과 나이대 정보 가져오기
-    const gender = document.querySelector("input[name='gender']:checked").value;
-    const age = document.querySelector("input[name='age']:checked").value;
+    // 배열에서 랜덤하게 음료 종류 선택
+    const randomIndex = Math.floor(Math.random() * resultTopImgArray.length);
+    const drinkKind = resultTopImgArray[randomIndex].drinkKind;
+
+    // 결과 페이지로 이동할 URL 생성
+    const resultPage = `./resultKind.html?drink_kind=${drinkKind}`;
 
     // 결과 페이지로 이동
-    const resultPage = `./resultKind.html?gender=${gender}&age=${age}`;
     goToNextPage(resultPage);
+
+    // AJAX 요청으로 백엔드에 데이터 전송
+    sendResultData(drinkKind);
   });
 
   // 닫기 버튼 클릭 시 모달 창 닫기
@@ -188,21 +208,13 @@ function openResultModal() {
   closeButton.onclick = function () {
     modal.style.display = "none";
   };
-
-  // 배열에서 랜덤하게 이미지를 선택합니다.
-  const randomIndex = Math.floor(Math.random() * resultTopImgArray.length);
-  const randomImage = resultTopImgArray[randomIndex];
-
-  // 랜덤하게 선택된 이미지를 resultTopImg의 소스로 설정합니다.
-  const resultTopImg = document.getElementById("resultTopImg");
-  resultTopImg.src = randomImage;
 }
 
 // 페이지가 로드될 때 결과보기 모달의 이미지를 랜덤으로 설정합니다.
 window.addEventListener("DOMContentLoaded", function () {
   const resultTopImg = document.getElementById("resultTopImg");
   const randomIndex = Math.floor(Math.random() * resultTopImgArray.length);
-  const randomImage = resultTopImgArray[randomIndex];
+  const randomImage = resultTopImgArray[randomIndex].imagePath;
   resultTopImg.src = randomImage;
 });
 
