@@ -158,6 +158,7 @@ function result_confirm() {
         sugar: sugar
       }}
     )
+    
   } else {
     alert("다음 질문도 선택해주세요~!")
   }
