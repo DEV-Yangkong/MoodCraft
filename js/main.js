@@ -126,8 +126,8 @@ function downdateImage() {
     // 질문 번호 및 질문 내용 업데이트
     const questionNumberElement = document.getElementById("questionNumberSpan");
     const questionElement = document.getElementById("questionSpan");
-    questionNumberElement.textContent = count; // 질문 번호 업데이트
-    questionElement.textContent = getQuestionText(count); // 질문 내용 업데이트
+    questionNumberElement.textContent = count + 1; // 질문 번호 업데이트
+    questionElement.textContent = getQuestionText(count + 1); // 질문 내용 업데이트
   } else if (count === 1) {
     openPreviousModal();
   }
