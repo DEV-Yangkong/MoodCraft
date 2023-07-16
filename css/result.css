@@ -56,7 +56,8 @@ body {
 }
 
 #mainButton {
-  background: #5dc8cd;
+  background: #353ef0;
+  border: 3px solid #0adeed;
   border-radius: 10px;
   font-weight: 600;
   line-height: 40px;
@@ -71,4 +72,14 @@ body {
 
 #teamButtonImg {
   width: 600px;
+}
+
+#productButton {
+  background: #353ef0;
+  border: 3px solid #0adeed;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #fff;
+  transition: all 0.2s;
 }
