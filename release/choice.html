@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/choice.css" />
+    <link rel="stylesheet" href="/css/progress.css" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <title>오늘의 술! - MoodCraft</title>
+  </head>
+  <body>
+    <!-- 👇🏻두 가지 선택의 테스트 페이지 입니다.👇🏻 -->
+    <!-- --------------------------------------------------------------------- -->
+    <!-- 헤더 -->
+    <div id="centerWrap">
+      <header>
+        <div>
+          <img src="/img/topBanner2.png" id="mainImage" />
+        </div>
+      </header>
+      <!-- 메인 -->
+      <main>
+        <div class="questionWrapper">
+          <div id="questionNumber">
+            <span id="questionNumberSpan">1</span>
+          </div>
+          <div><img id="questionTheme" src="/img/question_theme.png" /></div>
+          <div id="question">
+            <span id="questionSpan">
+              밥 한 그릇으로 푸짐하게 식사를 할 때 어떤 음식을 선호해?
+            </span>
+          </div>
+        </div>
+        <div class="choicesWrapper">
+          <div id="choice_01" class="choices" onclick="updateImage();">
+            <div class="choicesImg">
+              <img id="choiceImg_01" src="../img/choice1/choice_1.png" />
+            </div>
+            <div class="choiceText" id="choiceText_01">
+              <span>감칠맛 나는 김치찌개가 좋아!</span>
+            </div>
+          </div>
+          <div id="choice_02" class="choices" onclick="updateImage();">
+            <div class="choicesImg">
+              <img id="choiceImg_02" src="../img/choice2/choice_1.png" />
+            </div>
+            <div class="choiceText" id="choiceText_02">
+              <span>진하고 고소한 된장찌개가 땡겨!</span>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- 푸터 -->
+      <footer>
+        <!-- 프로그래스바 -->
+        <div class="progressContainer">
+          <div class="bar"></div>
+          <div class="cheersImgContainer">
+            <img
+              id="cheersImg"
+              src="/img/copyright/free-icon-cheers-2405423.png"
+              alt="cheers!"
+            />
+          </div>
+        </div>
+        <!-- 버튼 -->
+        <div class="buttonClick">
+          <button id="previousButton" onclick="downdateImage();">
+            이전으로
+          </button>
+          <button id="mainButton" onclick="goToNextPage('./mainPage.html')">
+            다시하기
+          </button>
+        </div>
+
+        <!-- 이전 모달 -->
+        <div id="previousModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>처음으로 돌아가시겠습니까?</h3>
+            <button id="goBackButton">처음으로</button>
+          </div>
+        </div>
+
+        <!-- 결과보기 모달 -->
+        <div id="resultModal" class="modal">
+          <div class="modalContent">
+            <span class="close">&times;</span>
+            <h2>결과를 보시겠습니까?</h2>
+            <div class="formGroup">
+              <label>성별:</label>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                checked
+              />
+              <label for="male">남성</label>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">여성</label>
+            </div>
+            <div class="formGroup">
+              <label>나이대:</label>
+              <input type="radio" id="20s" name="age" value="20s" checked />
+              <label for="20s">19~29</label>
+              <input type="radio" id="30s" name="age" value="30s" />
+              <label for="30s">30대</label>
+              <input type="radio" id="40s" name="age" value="40s" />
+              <label for="40s">40대</label>
+              <input type="radio" id="50s" name="age" value="50s" />
+              <label for="50s">50대</label>
+              <input type="radio" id="60s" name="age" value="60s" />
+              <label for="60s">60대</label>
+              <!-- 다른 나이대 옵션들 추가 -->
+            </div>
+            <button id="resultButton">결과보기</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/progress.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
