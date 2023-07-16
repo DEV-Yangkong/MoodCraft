@@ -1,19 +1,24 @@
-const buttons = document.querySelectorAll('.btn');
-let isClicked = false;
+// const buttons = document.querySelectorAll('.btn');
+// let isClicked = false;
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    isClicked = !isClicked; // 클릭할 때마다 상태 변경
-    if (isClicked) {
-      // 버튼이 눌려있는 상태일 때의 동작
-      console.log(`${button.innerText} 버튼이 눌렸습니다.`);
-    } else {
-      // 버튼이 눌려있지 않은 상태일 때의 동작
-      console.log(`${button.innerText} 버튼이 해제되었습니다.`);
-    }
-  });
-});
+// buttons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     isClicked = !isClicked; // 클릭할 때마다 상태 변경
+//     if (isClicked) {
+//       // 버튼이 눌려있는 상태일 때의 동작
+//       console.log(`${button.innerText} 버튼이 눌렸습니다.`);
+//     } else {
+//       // 버튼이 눌려있지 않은 상태일 때의 동작
+//       console.log(`${button.innerText} 버튼이 해제되었습니다.`);
+//     }
+//   });
+// });
 
+
+// let URL = window.location.href.substr(51);
+let URL = window.location.href.substr(40);
+
+console.log(URL);
 
 
 //카카오톡 API 연결, 나중에 주소 바꾸기
@@ -151,15 +156,17 @@ function result_confirm() {
     console.log('도수 :',dosu)
     console.log('슈가 :',sugar)
     
-    axios.get(
-      'http://localhost:8000/api/v1/result/soju/detail/',
-      {params:
-        {dosu: dosu,
-        sugar: sugar
-      }}
-    )
+    // axios.get(
+    //   'http://localhost:8000/api/v1/result/soju/detail/',
+    //   {params:
+    //     {drink_kind: URL,
+    //       dosu: dosu,
+    //     sugar: sugar
+    //   }}
+    // )
 
-    location.href='http://127.0.0.1:5500/release/resultProduct.html';
+console.log('url : ',URL);
+    location.href=`http://127.0.0.1:5500/release/resultProduct.html?${URL}&dosu=${dosu}&sugar=${sugar}&/`;
   } else {
     alert("다음 질문도 선택해주세요~!")
   }
@@ -167,25 +174,7 @@ function result_confirm() {
   // 소주 있는 값이 원래 드링크_카인드(예은언니가 보내줘야되는값)라 나중에 수정 해야함   
 }
 
-function sharePage () {
-  const shareObject = {
-    title: '오늘의 술! - MoodCraft',
-    text: '오늘의 술! - MoodCraft',
-    url: 'http://127.0.0.1:5500/release/resultProduct.html'
-  };
-  if (navigator.share){
-    navigator
-    .share(shareObject)
-    .then(() => {
-      alert('공유가 완료되었습니다');
-    })
-    .catch((error) => {
-      alert('에러가 발생했습니다');
-    })
-  } else{
-    alert('페이지 공유를 지원하지 않습니다');
-  }
-}
+
 
 
 
