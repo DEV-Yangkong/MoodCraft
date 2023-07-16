@@ -1,21 +1,22 @@
-const buttons = document.querySelectorAll('.btn');
-let isClicked = false;
+// const buttons = document.querySelectorAll('.btn');
+// let isClicked = false;
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    isClicked = !isClicked; // 클릭할 때마다 상태 변경
-    if (isClicked) {
-      // 버튼이 눌려있는 상태일 때의 동작
-      console.log(`${button.innerText} 버튼이 눌렸습니다.`);
-    } else {
-      // 버튼이 눌려있지 않은 상태일 때의 동작
-      console.log(`${button.innerText} 버튼이 해제되었습니다.`);
-    }
-  });
-});
+// buttons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     isClicked = !isClicked; // 클릭할 때마다 상태 변경
+//     if (isClicked) {
+//       // 버튼이 눌려있는 상태일 때의 동작
+//       console.log(`${button.innerText} 버튼이 눌렸습니다.`);
+//     } else {
+//       // 버튼이 눌려있지 않은 상태일 때의 동작
+//       console.log(`${button.innerText} 버튼이 해제되었습니다.`);
+//     }
+//   });
+// });
 
 
-let URL = window.location.href.substr(51);
+// let URL = window.location.href.substr(51);
+let URL = window.location.href.substr(40);
 
 console.log(URL);
 
@@ -155,16 +156,17 @@ function result_confirm() {
     console.log('도수 :',dosu)
     console.log('슈가 :',sugar)
     
-    axios.get(
-      'http://localhost:8000/api/v1/result/soju/detail/',
-      {params:
-        {drink_kind: URL,
-          dosu: dosu,
-        sugar: sugar
-      }}
-    )
+    // axios.get(
+    //   'http://localhost:8000/api/v1/result/soju/detail/',
+    //   {params:
+    //     {drink_kind: URL,
+    //       dosu: dosu,
+    //     sugar: sugar
+    //   }}
+    // )
+
 console.log('url : ',URL);
-    location.href='http://127.0.0.1:5500/release/resultProduct.html';
+    location.href=`http://127.0.0.1:5500/release/resultProduct.html?${URL}&dosu=${dosu}&sugar=${sugar}&/`;
   } else {
     alert("다음 질문도 선택해주세요~!")
   }
