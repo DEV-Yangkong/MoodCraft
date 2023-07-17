@@ -27,7 +27,6 @@ body {
 }
 
 .images {
-  margin-top: 50px;
   width: 350px;
   display: flex;
   justify-content: space-between;
@@ -42,7 +41,7 @@ body {
 }
 
 .images {
-  margin-top: 50px;
+  margin-top: 20px;
   width: 350px;
   display: flex;
   justify-content: space-between;
