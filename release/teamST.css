@@ -25,7 +25,7 @@ body {
 }
 .character {
    border-radius: 10px;
-    width: 180px;
+    width: 200px;
     height: 200px;
     margin: 10px 0 0 10px;
 }
@@ -33,7 +33,7 @@ body {
     margin: 20px;
     border-radius: 10px;
     background-color: rgb(255, 192, 203);
-    width: 200px;
+    width: 220px;
     height: 290px;
 }
 
@@ -62,5 +62,5 @@ body {
     line-height: 40px;
     color: #fff;
     transition: all 0.2s;
-    margin-left: 267px;
+    margin-left: 255px;
   }
