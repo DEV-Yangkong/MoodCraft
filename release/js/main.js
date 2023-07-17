@@ -23,7 +23,7 @@ const resultTopImgArray = [
   },
   {
     imagePath: "./img/rumMain.png",
-    drinkKind: "rum",
+    drinkKind: "whiskey",
   },
 ];
 
