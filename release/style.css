@@ -41,21 +41,26 @@ body {
 }
 
 #participantsWrapper {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .participantText {
   margin-top: 6px;
+}
+
+#participants {
   font-size: 25px;
 }
 
-/* 얘 마진 조정해야함 */
+#numbers {
+  font-size: 20px;
+}
+
 #mainAdvertising {
   display: inline-block;
-  width: 1000px;
-  margin-top: 15px;
+  width: 700px;
+  margin-top: 10px;
   height: 50px;
-  background-color: blanchedalmond;
   font-size: 30px;
 }
 

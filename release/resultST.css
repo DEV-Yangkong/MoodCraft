@@ -1,51 +1,67 @@
-
-
 body {
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-    width: 584px;
-    height: 877px;
-    border: 3px solid red;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  width: 584px;
+  height: 877px;
+}
 
-} 
-
-.container{
-    display: flex;
-    flex-direction: column;   
-    justify-content: center; 
-    align-items: center;
-    /* width: 584px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 584px;
     height: 877px; */
-
 }
 .result {
-    border: 1px solid gray;
-    width: 500px;
-    height: 500px;
-    background-color: gray;
-    justify-content: center;
-    text-align: center;
+  border: 1px solid gray;
+  width: 500px;
+  height: 500px;
+  background-color: gray;
+  justify-content: center;
+  text-align: center;
 }
 
 .ad {
-    border: 1px solid gray;
-    width: 580px;
-    height: 80px;
-    background-color: gray;
-    margin-top: 50px;
-    justify-content: center;
-    text-align: center;
+  width: 580px;
+  height: 80px;
+  margin-top: 50px;
+  justify-content: center;
+  text-align: center;
 }
 
 .images {
-    border: 3px solid green;
-    margin-top: 50px;
-    width: 350px;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 50px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #mood {
-    margin: 20px 0;
+  margin: 20px 0;
+}
+
+/* 윤아꺼에 추가한 css */
+
+#mainButton {
+  background: #5dc8cd;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  line-height: 50px;
+  font-size: 20px;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+}
+
+#moodcraftButton {
+  border: none;
+  background: none;
+}
+
+.snsImg {
+  border-radius: 50px;
+  width: 55px;
 }
