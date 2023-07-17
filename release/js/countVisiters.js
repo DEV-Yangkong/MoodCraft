@@ -13,11 +13,17 @@ function countVisiters() {
         const response = JSON.parse(xhr.responseText);
         const participantCount = response.participants;
         const numbersElement = document.getElementById("numbers");
-        numbersElement.textContent = participantCount
-          .toString()
-          .padStart(6, "0");
-        console.log("GET request successful!");
-        console.log("방문자 수:", participantCount);
+
+        // participantCount가 유효한 값인지 확인한 후, .toString() 메서드 호출
+        if (participantCount !== undefined) {
+          numbersElement.textContent = participantCount
+            .toString()
+            .padStart(6, "0");
+          console.log("GET request successful!");
+          console.log("방문자 수:", participantCount);
+        } else {
+          console.error("방문자 수가 유효하지 않습니다.");
+        }
       } else {
         // 요청이 실패했을 때 처리할 코드 작성
         console.error("GET request failed.");
@@ -29,5 +35,5 @@ function countVisiters() {
 
 // 페이지가 로드될 때 방문자 수 세기
 window.addEventListener("DOMContentLoaded", function () {
-  countVisitors();
+  countVisiters(); // countVisiters() 함수 호출
 });

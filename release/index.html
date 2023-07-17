@@ -15,7 +15,7 @@
     <title>오늘의 술! - MoodCraft</title>
   </head>
   <body>
-    <!-- 👇🏻메인페이지입니다.👇🏻 -->
+    <!-- 👇🏻인덱스페이지입니다.👇🏻 -->
     <!-- --------------------------------------------------------------------- -->
     <!-- 헤더 -->
     <div id="centerWrap">
@@ -102,20 +102,7 @@
         </div>
       </footer>
     </div>
-    <script src="./js/main.js"></script>
-    <script>// 테스트 시작 버튼 클릭 시 이벤트 핸들러
-      const startButton = document.getElementById("startButton");
-      startButton.addEventListener("click", function () {
-        // 페이지 이동
-        goToNextPage("./choice.html");
-      });
-  
-      // 페이지 로드 시 모달 창 열기
-      window.addEventListener("load", function () {
-        const modal = document.getElementById("myModal");
-        modal.style.display = "block";
-        // 프로그래스 바 초기화
-        updateProgressBar();
-      });</script>
+    <script src="./js/countVisiters.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
