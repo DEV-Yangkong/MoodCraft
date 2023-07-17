@@ -15,6 +15,7 @@ class ResultDetailModel(models.Model):
     drink_name = models.CharField(max_length = 15, verbose_name="술 이름")
     description = models.TextField(verbose_name="설명")
     image = models.ImageField(blank = True, null = True, upload_to="uploads")
+    image_url = models.CharField(max_length = 1000, null = True)
     before_result = models.ForeignKey(
         "results.Result",
         related_name="results",

@@ -22,6 +22,7 @@ class ResultDetailAdmin(admin.ModelAdmin):
         "dosu",
         "sugar",
         "image",
+        "image_url",
     )
     list_filter = (
         "before_result",
