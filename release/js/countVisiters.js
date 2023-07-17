@@ -1,3 +1,5 @@
+// countVisiters.js 파일
+
 // 방문자 수 세는 함수
 function countVisiters() {
   // POST 요청을 보낼 URL 설정 (백엔드의 URL을 입력하세요)
@@ -10,19 +12,25 @@ function countVisiters() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         // 요청이 성공적으로 완료되었을 때 처리할 코드 작성
-        const response = JSON.parse(xhr.responseText);
-        const participantCount = response.participants;
-        const numbersElement = document.getElementById("numbers");
-
-        // participantCount가 유효한 값인지 확인한 후, .toString() 메서드 호출
-        if (participantCount !== undefined) {
-          numbersElement.textContent = participantCount
-            .toString()
-            .padStart(6, "0");
-          console.log("GET request successful!");
-          console.log("방문자 수:", participantCount);
-        } else {
-          console.error("방문자 수가 유효하지 않습니다.");
+        try {
+          const response = JSON.parse(xhr.responseText);
+          if (response && response.participants !== undefined) {
+            const participantCount = response.participants;
+            const numbersElement = document.getElementById("numbers");
+            if (numbersElement) {
+              numbersElement.textContent = participantCount
+                .toString()
+                .padStart(6, "0");
+            }
+            console.log("GET request successful!");
+            console.log("방문자 수:", participantCount);
+          } else {
+            console.error(
+              "Invalid response data: 'participants' key is missing or undefined."
+            );
+          }
+        } catch (error) {
+          console.error("Error parsing response:", error);
         }
       } else {
         // 요청이 실패했을 때 처리할 코드 작성
