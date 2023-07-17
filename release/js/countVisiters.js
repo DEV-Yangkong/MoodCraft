@@ -14,13 +14,13 @@ function countVisiters() {
         // 요청이 성공적으로 완료되었을 때 처리할 코드 작성
         try {
           const response = JSON.parse(xhr.responseText);
-          if (response && response.participants !== undefined) {
-            const participantCount = response.participants;
+          if (response && response.count !== undefined) {
+            const participantCount = response.count;
             const numbersElement = document.getElementById("numbers");
             if (numbersElement) {
               numbersElement.textContent = participantCount
                 .toString()
-                .padStart(6, "0");
+                .padStart(7, "0");
             }
             console.log("GET request successful!");
             console.log("방문자 수:", participantCount);

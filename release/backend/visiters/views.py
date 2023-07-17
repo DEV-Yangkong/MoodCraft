@@ -61,3 +61,5 @@ class AllVisiters(APIView):
             return Response(VisiterSerializer(save_data).data)
         else:
             return Response(serializer.errors)
+
+
