@@ -1,6 +1,6 @@
 from django.db import models
 from results.models import Result,ResultDetailModel
-from datetime import timezone
+
 class Visiter(models.Model):
     class GenderChoice(models.TextChoices):
         MALE = ("male", "Male")
@@ -15,7 +15,7 @@ class Visiter(models.Model):
 
     gender = models.CharField(max_length=10, choices=GenderChoice.choices, null=True)
     age = models.CharField(max_length=10,choices=AgeChoice.choices, null=True )    
-    result = models.ForeignKey("results.Result",on_delete=models.CASCADE, null=True, related_name="visiters")
+    result = models.ForeignKey("results.Result",on_delete=models.CASCADE, null=True)
     result_detail = models.ForeignKey("results.ResultDetailModel", on_delete= models.CASCADE, null=True)
-    created_date = models.DateTimeField(auto_now_add=True, blank = True)
     
+#무슨 문제일까

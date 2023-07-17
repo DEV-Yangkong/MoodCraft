@@ -12,7 +12,7 @@ class ResultAdmin(admin.ModelAdmin):
         "drink_count",
         "description",
     )
-
+   
 @admin.register(ResultDetailModel)
 class ResultDetailAdmin(admin.ModelAdmin):
     list_display = (
@@ -22,5 +22,8 @@ class ResultDetailAdmin(admin.ModelAdmin):
         "dosu",
         "sugar",
         "image",
+    )
+    list_filter = (
+        "before_result",
     )
 # Register your models here.
