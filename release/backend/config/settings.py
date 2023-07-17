@@ -133,7 +133,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
-CORS_ORIGIN_WHITELIST = ['http://localhost:5500']
-CORS_ORIGIN_ALLOW_ALL = True
-# cores 오류 떠서 제가 임의로 전체 허용 했습니다☝🏻-예은-
+CORS_ORIGIN_WHITELIST = ['http://localhost:5500', 'http://127.0.0.1:5500',  ]
+# CORS_ORIGIN_ALLOW_ALL = True 로 에러 잡았다가 다시 로컬호스트 주소 넣으니 해결돼서 변경해놨습니다 - 예은-
 CORS_ALLOW_CREDENTIALS = True
