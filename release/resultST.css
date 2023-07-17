@@ -5,28 +5,38 @@ body {
   width: 584px;
   height: 877px;
 }
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 584px;
-    height: 877px; */
+  width: 584px;
+  height: 877px;
+  margin: 0 auto;
 }
+
 .result {
   border: 1px solid gray;
   width: 500px;
   height: 500px;
   background-color: gray;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+}
+
+.images {
+  margin-top: 50px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ad {
-  width: 580px;
+  width: 600px;
   height: 80px;
-  margin-top: 50px;
+  margin-top: 20px;
   justify-content: center;
   text-align: center;
 }
@@ -39,7 +49,12 @@ body {
 }
 
 #mood {
-  margin: 20px 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-family: "Indie Flower", cursive;
+  font-size: 60px;
+  font-weight: bolder;
+  letter-spacing: 20px;
 }
 
 /* 윤아꺼에 추가한 css */
@@ -64,4 +79,26 @@ body {
 .snsImg {
   border-radius: 50px;
   width: 55px;
+}
+
+#beerExample {
+  height: 400px;
+  margin-top: -20px;
+}
+
+#glan {
+  margin-top: -20px;
+  font-size: 40px;
+}
+
+#result1 {
+  margin-top: -20px;
+  font-size: 20px;
+  font-family: "Hahmlet", serif;
+}
+
+#result3 {
+  margin-top: 5px;
+  font-family: "East Sea Dokdo", cursive;
+  font-size: 20px;
 }
