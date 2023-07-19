@@ -99,7 +99,7 @@ function getChoiceText(count, choiceNumber) {
     ],
     [
       "요가, 헬스트레이닝 같은<br>정적인 운동이 좋아.",
-      "테니스나 등산 같은<br>활동적인 운동을 좋아.",
+      "테니스나 등산 같은<br>활동적인 운동이 좋아.",
     ],
   ];
 
