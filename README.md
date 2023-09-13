@@ -5,6 +5,8 @@ MoodCraft is a small-scale team toy project that recommends drinks based on user
 
 <img width="80%" src="./무드크래프트 복사본.gif"/>
 
+`MoodCraft` 후기 <a href="https://dev-yangkong.tistory.com/59"> click here! </a>
+
 ## Overview
 
 MoodCraft recommends drinks tailored to the user's current mood and situation. This project aims to enhance the experience of enjoying drinks by allowing users to make natural and suitable choices based on their mood and circumstances.
